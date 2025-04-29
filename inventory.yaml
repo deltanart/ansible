@@ -1,0 +1,12 @@
+vm:
+  hosts:
+    public-proxy-test: 
+      ansible_host: 192.168.1.176
+    public-docker:
+      ansible_host: 192.168.1.175
+    ansible-pve-manager:
+      ansible_host: 192.168.1.177
+  vars:
+    ansible_user: ubuntu
+
+
