@@ -1,0 +1,12 @@
+ - hosts: "sacrifice"
+   become: yes
+   tasks:
+    - name: Copy over the sshd_config file
+      template: src=../templates/ssh/sshd_config dest=/etc/ssh/sshd_config
+    - name: (Re)Set authorized_keys
+      template: src=../templates/ssh/authorized_keys dest=/home/ubuntu/.ssh/authorized_keys
+      notify:
+      - restart ssh
+   handlers:
+    - name: restart ssh
+      service: name=ssh state=restarted

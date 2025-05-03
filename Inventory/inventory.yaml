@@ -9,4 +9,9 @@ vm:
   vars:
     ansible_user: ubuntu
 
-
+sacrifice:
+  hosts:
+    public-proxy-test: 
+      ansible_host: 192.168.1.176
+  vars:
+    ansible_user: ubuntu

@@ -1,12 +1,11 @@
 - hosts: vm
+  become: true
   tasks:
     - name: install qemu-guest-agent
-      become: true
       apt:
         name: qemu-guest-agent
         state: latest
     - name: check qemu service status
-      become: true
       service:
         name: qemu-guest-agent
         state: started

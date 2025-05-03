@@ -1,0 +1,3 @@
+- import_playbook: base-system/apt-update.yaml
+- import_playbook: base-system/qemu-guest-install.yaml
+- import_playbook: base-system/timezone.yaml

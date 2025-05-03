@@ -1,0 +1,11 @@
+- name: Set timezone and configure timesyncd
+  hosts: "*"
+  become: yes
+  tasks:
+  - name: set timezone
+    shell: timedatectl set-timezone Europe/Berlin
+
+  - name: Make sure timesyncd is restarted
+    systemd:
+      name: systemd-timesyncd.service
+      state: restarted
